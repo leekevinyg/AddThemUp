@@ -39,6 +39,21 @@ var NumbersFrame = require('./components/NumbersFrame.js');
       );
     },
 
+    sumSelectedNumbers: function() {
+      var sum = 0;
+      for (var index = 0; index < this.state.selectedNumbers.length; index++ ) {
+        sum = sum + this.state.selectedNumbers[index];
+      }
+      return sum;
+    },
+
+    validateAnswer: function() {
+      if (this.sumSelectedNumbers() === this.state.numberOfStars) {
+        return true;
+      }
+      return false;
+    },
+
     render: function() {
       var selectedNumbers = this.state.selectedNumbers;
       var numberOfStars = this.state.numberOfStars;
@@ -49,7 +64,7 @@ var NumbersFrame = require('./components/NumbersFrame.js');
           <hr />
           <div className="clearfix">
             <StarsFrame numberOfStars={numberOfStars}/>
-            <ButtonFrame selectedNumbers={selectedNumbers}/>
+            <ButtonFrame selectedNumbers={selectedNumbers} validateAnswer={this.validateAnswer}/>
             <AnswerFrame selectedNumbers={selectedNumbers} clickNumber={this.removeNumberClick}/>
           </div>
 

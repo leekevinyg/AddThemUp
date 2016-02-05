@@ -2,6 +2,7 @@
 var React = require('react');
 
 var ButtonFrame = React.createClass({
+
   render: function() {
     var disabled;
 
@@ -11,7 +12,7 @@ var ButtonFrame = React.createClass({
 
     return (
       <div id="button-frame">
-        <button className="btn btn-primary btn-lg" disabled={disabled}>
+        <button className="btn btn-primary btn-lg" disabled={disabled} onClick={this.props.validateAnswer}>
           =
         </button>
       </div>
