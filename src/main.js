@@ -40,7 +40,6 @@ var NumbersFrame = require('./components/NumbersFrame.js');
     },
 
     render: function() {
-
       var selectedNumbers = this.state.selectedNumbers;
       var numberOfStars = this.state.numberOfStars;
 
