@@ -40,11 +40,9 @@ var NumbersFrame = require('./components/NumbersFrame.js');
     },
 
     sumSelectedNumbers: function() {
-      var sum = 0;
-      for (var index = 0; index < this.state.selectedNumbers.length; index++ ) {
-        sum = sum + this.state.selectedNumbers[index];
-      }
-      return sum;
+      return (this.state.selectedNumbers.reduce(function(previousValue, nextValue) {
+        previousValue + nextValue
+      }, 0);
     },
 
     validateAnswer: function() {
