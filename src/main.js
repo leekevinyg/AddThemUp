@@ -41,8 +41,8 @@ var NumbersFrame = require('./components/NumbersFrame.js');
 
     sumSelectedNumbers: function() {
       return (this.state.selectedNumbers.reduce(function(previousValue, nextValue) {
-        previousValue + nextValue
-      }, 0);
+        return previousValue + nextValue;
+      }, 0));
     },
 
     validateAnswer: function() {
