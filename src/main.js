@@ -25,7 +25,8 @@ var NumbersFrame = require('./components/NumbersFrame.js');
     addNumberClick: function(clickedNumber) {
       if (this.state.selectedNumbers.indexOf(clickedNumber) < 0) {
         this.setState(
-          {selectedNumbers: this.state.selectedNumbers.concat(clickedNumber)}
+          { selectedNumbers: this.state.selectedNumbers.concat(clickedNumber),
+            correct: null }
         );
       }
     },
@@ -36,7 +37,8 @@ var NumbersFrame = require('./components/NumbersFrame.js');
       selectedNumbers.splice(indexOfNumber, 1);
 
       this.setState(
-        {selectedNumbers: selectedNumbers}
+        { selectedNumbers: selectedNumbers,
+          correct: null}
       );
     },
 
