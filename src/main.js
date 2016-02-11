@@ -13,7 +13,8 @@ var NumbersFrame = require('./components/NumbersFrame.js');
     getInitialState: function() {
       return {
               selectedNumbers: [],
-              numberOfStars: this.getRandomNumberBetweenOneAndNine()
+              numberOfStars: this.getRandomNumberBetweenOneAndNine(),
+              correct: null
       };
     },
 
@@ -40,21 +41,20 @@ var NumbersFrame = require('./components/NumbersFrame.js');
     },
 
     sumSelectedNumbers: function() {
-      return (this.state.selectedNumbers.reduce(function(previousValue, nextValue) {
+      return this.state.selectedNumbers.reduce(function(previousValue, nextValue) {
         return previousValue + nextValue;
-      }, 0));
+      }, 0);
     },
 
     validateAnswer: function() {
-      if (this.sumSelectedNumbers() === this.state.numberOfStars) {
-        return true;
-      }
-      return false;
+      var correct = (this.state.numberOfStars === this.sumSelectedNumbers());
+      this.setState({correct: correct});
     },
 
     render: function() {
       var selectedNumbers = this.state.selectedNumbers;
       var numberOfStars = this.state.numberOfStars;
+      var correct = this.state.correct;
 
       return (
         <div id="game">
@@ -62,7 +62,9 @@ var NumbersFrame = require('./components/NumbersFrame.js');
           <hr />
           <div className="clearfix">
             <StarsFrame numberOfStars={numberOfStars}/>
-            <ButtonFrame selectedNumbers={selectedNumbers} validateAnswer={this.validateAnswer}/>
+            <ButtonFrame selectedNumbers={selectedNumbers}
+                         validateAnswer={this.validateAnswer}
+                         correct={correct} />
             <AnswerFrame selectedNumbers={selectedNumbers} clickNumber={this.removeNumberClick}/>
           </div>
 
