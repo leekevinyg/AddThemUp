@@ -7,11 +7,13 @@ var ButtonFrame = React.createClass({
     var disabled, button;
     var correct = this.props.correct;
     var selectedNumbers = this.props.selectedNumbers.length;
+    var acceptAnswer = this.props.acceptAnswer;
 
     switch(correct) {
       case true:
         button = (
-          <button className="btn btn-success btn-lg">
+          <button className="btn btn-success btn-lg"
+                  onClick={acceptAnswer}>
             <span className="glyphicon glyphicon-ok"></span>
           </button>
         );
@@ -36,6 +38,12 @@ var ButtonFrame = React.createClass({
     return (
       <div id="button-frame">
         {button}
+        <br/>
+        <br/>
+        <button className="btn btn-warning btn-xs"
+                onClick={this.props.redraw}>
+            <span className="glyphicon glyphicon-refresh"></span>
+        </button>
       </div>
     );
   }

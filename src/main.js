@@ -14,12 +14,22 @@ var NumbersFrame = require('./components/NumbersFrame.js');
       return {
               selectedNumbers: [],
               numberOfStars: this.getRandomNumberBetweenOneAndNine(),
-              correct: null
+              correct: null,
+              usedNumbers: []
       };
     },
 
     getRandomNumberBetweenOneAndNine: function() {
       return (Math.floor(Math.random() * 9) + 1);
+    },
+
+    acceptAnswerHandler: function() {
+      var usedNumbers = this.state.usedNumbers.concat(this.state.selectedNumbers);
+      this.setState({usedNumbers: usedNumbers,
+                     selectedNumbers: [],
+                     correct: null,
+                     numberOfStars: this.getRandomNumberBetweenOneAndNine()});
+
     },
 
     addNumberClick: function(clickedNumber) {
@@ -53,10 +63,18 @@ var NumbersFrame = require('./components/NumbersFrame.js');
       this.setState({correct: correct});
     },
 
+    redraw: function() {
+      var newNumberOfStars = this.getRandomNumberBetweenOneAndNine();
+      this.setState({numberOfStars: newNumberOfStars,
+                     correct: null,
+                     selectedNumbers: []});
+    },
+
     render: function() {
       var selectedNumbers = this.state.selectedNumbers;
       var numberOfStars = this.state.numberOfStars;
       var correct = this.state.correct;
+      var usedNumbers = this.state.usedNumbers;
 
       return (
         <div id="game">
@@ -66,11 +84,16 @@ var NumbersFrame = require('./components/NumbersFrame.js');
             <StarsFrame numberOfStars={numberOfStars}/>
             <ButtonFrame selectedNumbers={selectedNumbers}
                          validateAnswer={this.validateAnswer}
-                         correct={correct} />
-            <AnswerFrame selectedNumbers={selectedNumbers} clickNumber={this.removeNumberClick}/>
+                         correct={correct}
+                         acceptAnswer={this.acceptAnswerHandler}
+                         redraw={this.redraw}/>
+            <AnswerFrame selectedNumbers={selectedNumbers}
+                         clickNumber={this.removeNumberClick}/>
           </div>
 
-          <NumbersFrame selectedNumbers={selectedNumbers} clickNumber={this.addNumberClick}/>
+          <NumbersFrame selectedNumbers={selectedNumbers}
+                        clickNumber={this.addNumberClick}
+                        usedNumbers={usedNumbers}/>
         </div>
       );
     }
