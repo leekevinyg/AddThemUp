@@ -15,7 +15,8 @@ var NumbersFrame = require('./components/NumbersFrame.js');
               selectedNumbers: [],
               numberOfStars: this.getRandomNumberBetweenOneAndNine(),
               correct: null,
-              usedNumbers: []
+              usedNumbers: [],
+              redrawCount: 5
       };
     },
 
@@ -75,6 +76,7 @@ var NumbersFrame = require('./components/NumbersFrame.js');
       var numberOfStars = this.state.numberOfStars;
       var correct = this.state.correct;
       var usedNumbers = this.state.usedNumbers;
+      var redrawCount = this.state.redrawCount;
 
       return (
         <div id="game">
@@ -86,7 +88,7 @@ var NumbersFrame = require('./components/NumbersFrame.js');
                          validateAnswer={this.validateAnswer}
                          correct={correct}
                          acceptAnswer={this.acceptAnswerHandler}
-                         redraw={this.redraw}/>
+                         redraw={redrawCount}/>
             <AnswerFrame selectedNumbers={selectedNumbers}
                          clickNumber={this.removeNumberClick}/>
           </div>
