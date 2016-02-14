@@ -1,4 +1,4 @@
-This is a simple children's math game built to experiment with React.js
+This is a simple children's math game built while learning and experimenting with React.js
 
 <h3>To get started:</h3>
 <ol>
