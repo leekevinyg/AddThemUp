@@ -11,7 +11,7 @@ var DoneFrame = require('./components/DoneFrame.js');
 
   var Game = React.createClass({
 
-    // React Hooks ============================================
+    // React Lifecycle Hooks ============================================
 
     getInitialState: function() {
       return {
