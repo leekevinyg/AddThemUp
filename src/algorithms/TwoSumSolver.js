@@ -29,28 +29,4 @@ var TwoSumSolver = function(arrayOfPossibleNumbers, targetSum) {
   return false;
 }
 
-/*  Old version - less efficient - O(n^2)
-
-    var lengthOfArray = arrayOfPossibleNumbers.length,
-        indexOfFirstElement = 0;
-
-    if (arrayOfPossibleNumbers.length === 1 &&
-        arrayOfPossibleNumbers[indexOfFirstElement] === targetSum) {
-       return true;
-    }
-
-    for (var i = 0; i <= lengthOfArray - 1; i++) {
-      var currentNumber = arrayOfPossibleNumbers[i];
-
-      for (var j = i + 1; j <= lengthOfArray; j++ ) {
-        if (currentNumber + arrayOfPossibleNumbers[j] === targetSum) {
-          return true;
-        }
-      }
-    }
-    return false;
-  };
-
-*/
-
 module.exports = TwoSumSolver;
