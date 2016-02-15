@@ -23,7 +23,7 @@ describe('TwoSumSolverTest', function() {
     expect(TwoSumSolver([1,2,3], 5)).toBe(true);
  });
 
- it('Odd numbered list, array contains duplicates', function() {
+ it('Odd numbered list, has sum, but array contains duplicates', function() {
     expect(TwoSumSolver([1,1,5], 2)).toBe(true);
  });
 
@@ -31,11 +31,11 @@ describe('TwoSumSolverTest', function() {
     expect(TwoSumSolver([1,1,5], 8)).toBe(false);
  });
 
- it('Even numbered list, array has sum', function() {
+ it('Even numbered list, has sum', function() {
     expect(TwoSumSolver([1,4,5,6], 9)).toBe(true);
  });
 
- it('Even numbered list, array does not have sum', function() {
+ it('Even numbered list, no sum', function() {
     expect(TwoSumSolver([1,4,5,6], 15)).toBe(false);
  });
  });
