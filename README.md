@@ -13,5 +13,5 @@ This is a simple children's math game built while learning and experimenting wit
 
 <h3>To run unit tests:</h3>
 <ol>
-<li>run 'npm test' from the root directory. This will run all unit tests under the __tests__ directory. Use 'npm test -- --watch' if using TDD.</li
+<li>run <code>npm test</code> from the root directory. This will run all unit tests under the __tests__ directory. Use <code>npm test -- --watch'</code> if using TDD.</li
 </ol>
