@@ -5,6 +5,7 @@ var ButtonFrame = require('./components/ButtonFrame.js');
 var AnswerFrame = require('./components/AnswerFrame.js');
 var NumbersFrame = require('./components/NumbersFrame.js');
 var DoneFrame = require('./components/DoneFrame.js');
+var TwoSumSolver = require('./components/TwoSumSolver.js');
 
 (function() {
   "use strict";
@@ -61,54 +62,6 @@ var DoneFrame = require('./components/DoneFrame.js');
       return (Math.floor(Math.random() * 9) + 1);
     },
 
-    possibleCombinationSum: function (arr, n) {
-
-    },
-
-
-/*
-    doesSumExist: function(targetSum, arrayOfPossibleNumbers) {
-      // We iterate through the arrayOfPossibleNumbers and store key/value pairs where:
-      // key = number, value = targetSums' complement of that number i.e., (targetSum - number)
-      // Then, we simply do a hashtable lookup for each number and see if the complement is present
-      // in the arrayOfPossibleNumbers. If it is, a possible sum exists and we return true.
-      // [Testing] Edge caes:
-      //  -one number solution
-      //  -sorted list, unsorted list
-      //  -list containing 1,2...up to length of list
-      //  -list with zeros
-
-      arrayOfPossibleNumbers = arrayOfPossibleNumbers.concat(0); // handle one number solution to game
-
-      alert("in does sum exist");
-      var hashTableOfNumberComplements = this.getNumberComplements(targetSum, arrayOfPossibleNumbers);
-
-      for (var index = 0; index <= arrayOfPossibleNumbers.length - 1; index++) {
-        var currentNumber = arrayOfPossibleNumbers[index];
-        var complementOfCurrentNumber = hashTableOfNumberComplements[currentNumber];
-        if (arrayOfPossibleNumbers.indexOf(complementOfCurrentNumber) > 0) {
-          return true;
-        }
-      }
-      return false;
-    },
-
-    getNumberComplements: function(targetSum, arrayOfPossibleNumbers) {
-      alert("in get Number complements");
-      var hashTableOfNumberComplements = {};
-
-      for (var index = 0; index <= arrayOfPossibleNumbers.length - 1; index++) {
-        var currentNumber = arrayOfPossibleNumbers[index],
-            complement = targetSum - currentNumber;
-        hashTableOfNumberComplements[currentNumber] = complement;
-      }
-
-      alert(hashTableOfNumberComplements);
-
-      return hashTableOfNumberComplements;
-    },
-*/
-
     updateGameStatus: function() {
       if (this.state.usedNumbers.length === 9) {
         this.setState({ doneStatus: 'Great job!'});
@@ -132,7 +85,7 @@ var DoneFrame = require('./components/DoneFrame.js');
         }
       }
 
-    return this.possibleCombinationSum(possibleNumbers, numberOfStars);
+    return TwoSumSolver(possibleNumbers, numberOfStars);
     },
 
     acceptAnswerHandler: function() {

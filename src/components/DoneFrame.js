@@ -12,6 +12,4 @@ var DoneFrame = React.createClass({
   }
 });
 
-
-
 module.exports = DoneFrame;
