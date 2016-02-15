@@ -11,4 +11,7 @@ This is a simple children's math game built while learning and experimenting wit
 <li>Navigate to <a href="http://localhost:9005/">http://localhost:9005/</a> if your browser doesn't open automatically.</li>
 </ol>
 
-
+<h3>To run unit tests:</h3>
+<ol>
+<li>run <code>npm test</code> from the root directory. This will run all unit tests under the __tests__ directory. Use <code>npm test -- --watch'</code> if using TDD.</li
+</ol>
