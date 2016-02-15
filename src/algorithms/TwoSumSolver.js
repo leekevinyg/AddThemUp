@@ -2,10 +2,10 @@
 
 /* the following function determines if any two numbers in the
 arrayOfPossibleNumbers can sum to the targetSum. We do this by
-storing the targetSum complement of each of the numbers in the
+keeping track of the targetSum complement of each number in the
 array as we encounter them. If we encounter a number in the array
-again that is the value of a previously stored complement then
-we have found a sum! */
+again that is the value of a previously stored target sum complement
+then we have found a possible sum! */
 var TwoSumSolver = function(arrayOfPossibleNumbers, targetSum) {
 
   var targetSumComplementHashTable = {},
