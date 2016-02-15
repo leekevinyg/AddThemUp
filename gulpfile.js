@@ -24,7 +24,7 @@ var config = {
       images: './src/images',
       dist: './dist',
       mainJs: './src/main.js',
-      fonts: 'node_modules/bootstrap/dist/fonts/*',
+      fonts: 'node_modules/bootstrap/dist/fonts/*'
   }
 }
 
