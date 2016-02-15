@@ -1,4 +1,4 @@
-// Test out unit testing framework - Jest
+// This is a stub component to verify jest integration
 
 "use strict";
 
