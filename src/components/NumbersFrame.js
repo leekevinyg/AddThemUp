@@ -4,11 +4,11 @@ var React = require('react');
 var NumbersFrame = React.createClass({
   render: function() {
 
-    var numbers = [];
-    var className;
-    var clickNumber = this.props.clickNumber;
-    var selectedNumbers = this.props.selectedNumbers;
-    var usedNumbers = this.props.usedNumbers;
+    var numbers = [],
+        className,
+        clickNumber = this.props.clickNumber,
+        selectedNumbers = this.props.selectedNumbers,
+        usedNumbers = this.props.usedNumbers;
 
     for (var i = 1; i <= 9; i++) {
       className = "number selected-" + (selectedNumbers.indexOf(i) >= 0);

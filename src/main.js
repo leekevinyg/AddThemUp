@@ -5,7 +5,7 @@ var ButtonFrame = require('./components/ButtonFrame.js');
 var AnswerFrame = require('./components/AnswerFrame.js');
 var NumbersFrame = require('./components/NumbersFrame.js');
 var DoneFrame = require('./components/DoneFrame.js');
-var TwoSumSolver = require('./components/TwoSumSolver.js');
+var doesSumExist = require('./algorithms/TwoSumSolver.js');
 
 (function() {
   "use strict";
@@ -85,7 +85,7 @@ var TwoSumSolver = require('./components/TwoSumSolver.js');
         }
       }
 
-    return TwoSumSolver(possibleNumbers, numberOfStars);
+    return doesSumExist(possibleNumbers, numberOfStars);
     },
 
     acceptAnswerHandler: function() {

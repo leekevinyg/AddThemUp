@@ -5,8 +5,8 @@ var StarsFrame = React.createClass({
 
   render: function() {
 
-    var numberOfStars = this.props.numberOfStars;
-    var stars = [];
+    var numberOfStars = this.props.numberOfStars,
+        stars = [];
 
     for (var i = 0; i < numberOfStars; i++) {
       stars.push(
