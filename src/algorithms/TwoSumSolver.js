@@ -27,6 +27,6 @@ var TwoSumSolver = function(arrayOfPossibleNumbers, targetSum) {
     }
   }
   return false;
-}
+};
 
 module.exports = TwoSumSolver;

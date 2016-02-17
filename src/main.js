@@ -32,7 +32,8 @@ var doesSumExist = require('./algorithms/TwoSumSolver.js');
           usedNumbers = this.state.usedNumbers,
           redrawCount = this.state.redrawCount,
           gameOver = this.state.doneStatus,
-          gameState = gameOver ? <DoneFrame doneStatus={gameOver} /> :
+          gameState = gameOver ? <DoneFrame doneStatus={gameOver}
+                                            resetGame={this.resetGame}/> :
                                  <NumbersFrame selectedNumbers={selectedNumbers}
                                                  clickNumber={this.addNumberClick}
                                                  usedNumbers={usedNumbers}/>;
@@ -72,6 +73,10 @@ var doesSumExist = require('./algorithms/TwoSumSolver.js');
         this.setState({ doneStatus: 'Game Over!'});
         return;
       }
+    },
+
+    resetGame: function() {
+      this.replaceState(this.getInitialState());
     },
 
     possibleSolutions: function() {
